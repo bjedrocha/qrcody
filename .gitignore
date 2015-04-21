@@ -1,2 +1,6 @@
+# Ignore RVM/rbenv files
+.ruby-version
+.ruby-gemset
+
 # Ignore cache
 tmp/cache
