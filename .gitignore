@@ -2,5 +2,6 @@
 .ruby-version
 .ruby-gemset
 
-# Ignore cache
+# Ignore cache and generated qr codes
 tmp/cache
+tmp/generated

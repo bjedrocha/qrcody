@@ -1,8 +1,11 @@
 require 'rubygems'
 require 'bundler'
-require 'rqrcode'
 
-Bundler.require
+Bundler.require # Load the needed gems from the gemfile.
+
+$: << File.expand_path('../', __FILE__) # Required so that Sinatra knows where to find all the routes and such.
+
+require 'models/qr_image'
 
 module QRCody
   class App < Sinatra::Application
@@ -17,11 +20,8 @@ module QRCody
       param :label, String, required: true
       param :size, Integer, default: 125
 
-      image = RQRCode::QRCode.new(params[:label], level: :l).as_png(size: params[:size])
-      image_path = "#{params[:label]}.png"
-      image.save(image_path)
-
-      Dragonfly.app.fetch_file(image_path).to_response(env)
+      qrcode = QRImage.new(params[:label], size: params[:size]).generate!
+      qrcode.to_response(env)
     end
   end
 end
