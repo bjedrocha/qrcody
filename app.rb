@@ -19,8 +19,9 @@ module QRCody
     get '/qr' do
       param :label, String, required: true
       param :size, Integer, default: 125
+      param :level, String, default: 'l'
 
-      qrcode = QRImage.new(params[:label], size: params[:size]).generate!
+      qrcode = QRImage.new(params[:label], size: params[:size], level: params[:level]).generate!
       qrcode.to_response(env)
     end
   end
