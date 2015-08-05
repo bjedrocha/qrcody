@@ -5,7 +5,7 @@ gem "sinatra", require: "sinatra/base"
 gem "sinatra-param"
 
 # QR Code Generation
-gem "rqrcode-with-patches", git: "https://github.com/bjedrocha/rqrcode.git", branch: "simplified-png-export"
+gem "rqrcode"
 gem "uuidtools"
 
 # Server

@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/bjedrocha/rqrcode.git
-  revision: fbc8d9f093f1fa0e1c157985280b397e42ec6a2f
-  branch: simplified-png-export
-  specs:
-    rqrcode-with-patches (0.5.4)
-      chunky_png
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,6 +21,8 @@ GEM
       rack (>= 0.4)
     rack-protection (1.5.3)
       rack
+    rqrcode (0.6.0)
+      chunky_png
     shotgun (0.9.1)
       rack (>= 1.0)
     sinatra (1.4.6)
@@ -54,7 +48,7 @@ DEPENDENCIES
   activesupport
   byebug
   rack-cache
-  rqrcode-with-patches!
+  rqrcode
   shotgun
   sinatra
   sinatra-param
